@@ -6,10 +6,7 @@ Write a function that takes a list of numbers and returns the cumulative sum; th
 
 def runsum(numlist):
     for i in range(len(numlist)):
-        if i == 0: #Otherwise first index will be added to last index [-1]
-            numlist[i] = numlist[i]
-        else:
-            numlist[i] = numlist[i]+numlist[i-1]
+        numlist[i] = numlist[i] if i == 0 else numlist[i]+numlist[i-1]
     return numlist
 
 if __name__ == '__main__':

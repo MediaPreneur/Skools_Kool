@@ -10,12 +10,13 @@ import string
 def stringer(fin):
     """Return an otherwise unreadable string from a file."""
     try:
-        outString = ''
         myFile = open(fin, 'r')
-        for char in myFile.read(): # read reads each character at a time, rather then readlines or readline.
-            if char not in string.whitespace and char not in string.punctuation: #Can make shorter?
-                outString += string.lower(char)
-        return outString
+        return ''.join(
+            string.lower(char)
+            for char in myFile.read()
+            if char not in string.whitespace and char not in string.punctuation
+        )
+
     except:
         return e
     finally:

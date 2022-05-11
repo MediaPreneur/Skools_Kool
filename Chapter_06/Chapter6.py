@@ -64,8 +64,7 @@ def hypotenuse(x,y):
     x2 = x**2
     y2 = y**2
     sum = x2+y2
-    hypotenuse = sqrt(sum)
-    return hypotenuse
+    return sqrt(sum)
 
 def is_between(x,y,z):
     """returns True if x ≤ y ≤ z or False otherwise"""

@@ -5,10 +5,7 @@ Use capitalize_all to write a function named capitalize_nested that takes a nest
 """
 
 def capitalize_all(t):
-    res = []
-    for s in t:
-        res.append(s.capitalize())
-    return res
+    return [s.capitalize() for s in t]
 
 # this function works for nested lists of arbitrary depth
 def capitalize_nested(nest_list):

@@ -6,14 +6,15 @@ def bisectFunc(inList, val):
     I guess this means the index in the sorted list, so you can use it for something."""
     searchIndex = bisect.bisect(inList, val)
     try:
-        for i in range(searchIndex-1,searchIndex+1):
-            if inList[i] == val:
-                return 'Found at Index: %d' % i
-        return False
-    ## Returns True, but doesn't return index value
-    #    for i in inList[searchIndex-1:searchIndex+1]:
-    #        if i == val:
-    #            return True
+        return next(
+            (
+                'Found at Index: %d' % i
+                for i in range(searchIndex - 1, searchIndex + 1)
+                if inList[i] == val
+            ),
+            False,
+        )
+
     except IndexError:
     # IndexError can occur if searched element does not exist and would also occur at end of list.
         return False

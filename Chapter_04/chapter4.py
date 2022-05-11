@@ -8,7 +8,7 @@ bob = Turtle()
 def square(t=bob, length=200):
 
     """Given a turtle and length, create a square"""
-    for i in range(4):
+    for _ in range(4):
         fd(t, length)
         lt(t)
 
@@ -16,7 +16,7 @@ def square(t=bob, length=200):
 def polygon(t=bob, length=90, n=5):
     """Given a turtle,length,and number of sides, create a polygon"""
     angle = 360/n
-    for i in range(n):
+    for _ in range(n):
         fd(t, length)
         lt(t, angle)
 
@@ -38,7 +38,7 @@ def arc(t=bob, r=50, angle=270):
     step_length = arc_length / n
     step_angle = float(angle) / n
 
-    for i in range(n):
+    for _ in range(n):
         fd(t, step_length)
         lt(t, step_angle)
 

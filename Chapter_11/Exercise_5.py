@@ -5,7 +5,7 @@ Read the documentation of the dictionary method setdefault and use it to write a
 """
 
 def invert_dict(d):
-    inverse = dict()
+    inverse = {}
     for key in d:
         val = d[key]
         if val not in inverse:
@@ -15,7 +15,7 @@ def invert_dict(d):
     return inverse
 
 def invert_dict_setdefault(d):
-    inverse = dict()
+    inverse = {}
     for key in d:
         val = d[key]
         inverse.setdefault(val, []) # check fo existence of val; Create singleton if not in inverse

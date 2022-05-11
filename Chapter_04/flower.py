@@ -24,7 +24,7 @@ def petal(t, r, angle):
     r: radius of the arcs
     angle: angle (degrees) that subtends the arcs
     """
-    for i in range(2):
+    for _ in range(2):
         arc(t, r, angle)
         lt(t, 180-angle)
 
@@ -37,7 +37,7 @@ def flower(t, n, r, angle):
     r: radius of the arcs
     angle: angle (degrees) that subtends the arcs
     """
-    for i in range(n):
+    for _ in range(n):
         petal(t, r, angle)
         lt(t, 360.0/n)
 

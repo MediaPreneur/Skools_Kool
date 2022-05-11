@@ -2,10 +2,7 @@ __author__ = 'matt'
 
 def has_no_e(word):
     """Returns True if input has no 'e'"""
-    for i in word:
-        if i=='e':
-            return False
-    return True
+    return all(i != 'e' for i in word)
 
 def has_no_e_list(in_list):
     """take a list, and print words w/o 'e'"""

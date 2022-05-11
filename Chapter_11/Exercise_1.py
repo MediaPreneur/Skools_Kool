@@ -7,12 +7,9 @@ Write a function that reads the words in words.txt and stores them as keys in a 
 
 def has_word(fin, wordin):
     """Return True if word is present with a file"""
-    fDict = {}
     file = open(fin, 'r')
 
-    for line in file:
-        fDict[line.strip()] = ''
-
+    fDict = {line.strip(): '' for line in file}
     if wordin in fDict:
         return True
     return False

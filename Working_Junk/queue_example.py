@@ -2,7 +2,7 @@ __author__ = 'matt'
 import Queue, random, time
 
 def producer():
-    for i in range (100):
+    for _ in range (100):
         time.sleep(1)
         return random.randint(1,1000)
 

@@ -8,10 +8,10 @@ def has_duplicates(inList):
     """Search Pattern for duplicate values in a list"""
     compareList=inList[:]
     compareList.sort()
-    for i in range(len(compareList)-1):
-        if compareList[i] == compareList[i+1]:
-            return True
-    return False
+    return any(
+        compareList[i] == compareList[i + 1]
+        for i in range(len(compareList) - 1)
+    )
 
 if __name__ == '__main__':
     list1 = ['a','a','b','c','d','e','f']

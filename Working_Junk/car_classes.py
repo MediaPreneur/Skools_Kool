@@ -9,9 +9,7 @@ class Tire(object):
 class Car(object):
     """a car class"""
     def __init__(self, numtires):
-        self.tires = [] # An attribute to hold all Tire instances
-        for i in range(numtires):
-            self.tires.append(Tire())
+        self.tires = [Tire() for _ in range(numtires)]
         self.make = 'ford'
         self.model = 'pinto'
         self.year = 1996

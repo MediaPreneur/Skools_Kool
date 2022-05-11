@@ -7,28 +7,13 @@ In this example, ties are broken by comparing words, so words with the same leng
 from random import random
 
 def sort_by_length(words):
-    t = []
-    for word in words:
-#        Append with a tuple containg elements for length and the word
-        t.append((len(word), random(), word))
+    t = [(len(word), random(), word) for word in words]
 #        t.append((random(),len(word), word))
 
     # For a tuple, sort occurs based on elements from left to right
     t.sort(reverse=True)
 
-    # Identify tuples with the same length
-    # Append a third random value to all dup length values
-    # Append value of 0 to all non-dups
-    ## Oh wait don't need to do all this crap ^^^^^^^^^^^^
-    ## because i can just salt with a random number,
-    ## and all elements with a no matching lengths will be
-    ## sorted by length first
-
-    res = []
-    for length, dupsort, word in t:
-
-        res.append(word)
-    return res
+    return [word for length, dupsort, word in t]
 
 if __name__ == '__main__':
     sortSequence = ('cat','rat','matt','fence','hair','chair')

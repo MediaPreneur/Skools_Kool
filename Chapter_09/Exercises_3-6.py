@@ -19,11 +19,7 @@ def avoids_RawInput(in_file):
     bad_letters = raw_input('bad letters >>>').split(',')
     fin = open(in_file, 'r')
 
-    goodWordCount=0
-    for line in fin:
-        if avoids(line.strip(), bad_letters):
-            goodWordCount+=1
-    return goodWordCount
+    return sum(bool(avoids(line.strip(), bad_letters)) for line in fin)
 
 # Exercise 4
 def uses_only(word, only_letters):
@@ -39,28 +35,14 @@ def uses_only(word, only_letters):
 # Exercise 5
 def uses_all(word, required_letters):
     """Write a function named uses_all that takes a word and a string of required letters, and that returns True if the word uses all the required letters at least once."""
-    for letter in required_letters:
-        if letter not in word: # Using not in since we need this to happen only once
-            return False
-    return True # Only want to return true after all required letters have been confirmed used
+    return all(letter in word for letter in required_letters)
 
 # Exercise 6
 def is_abcedarian(word):
     """Write a function called is_abecedarian that returns True if the letters in a word appear in alphabetical order (double letters are ok)."""
-    splitter = []
-    for letter in word:
-        splitter.append(letter)
-    # sorted = splitter.sort()
-    # For whatever reason, above code won't assign a sorted instance of list splitter to sorted
-    # but rather will go ahead and sort splitter, and return sorted is None
-    # OK What's happening is that the list is being aliased, not cloned.
-    # http://www.greenteapress.com/thinkpython/thinkCSpy/html/chap08.html see 8.Chapter_11-8.Chapter_12
-    sorted = splitter[:] # clone that shit, with a slice
-    sorted.sort()
-    if splitter == sorted:
-        return True
-    else:
-        return False
+    splitter = list(word)
+    sorted = sorted(splitter)
+    return splitter == sorted
 
 
 if __name__ == '__main__':

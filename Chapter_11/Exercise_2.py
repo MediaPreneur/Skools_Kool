@@ -5,7 +5,7 @@ Use get to write histogram more concisely. You should be able to eliminate the i
 """
 
 def histogram(s):
-    d = dict()
+    d = {}
     for c in s:
         if c not in d:
             d[c] = 1
@@ -15,7 +15,7 @@ def histogram(s):
 
 def histogramGet(s):
     """For a given sequence, return a count of each element"""
-    d = dict()
+    d = {}
     for c in s:
         d[c] = d.get(c, 0) # Need to assign default value '0' to key 'c' if not present in dict 'd'
         d[c] += 1

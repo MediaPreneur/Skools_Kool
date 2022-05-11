@@ -22,7 +22,7 @@ def square(t, length):
 
     Returns the Turtle to the starting position and location.
     """
-    for i in range(4):
+    for _ in range(4):
         fd(t, length)
         lt(t)
 
@@ -35,7 +35,7 @@ def polyline(t, n, length, angle):
     length: length of each segment
     angle: degrees between segments
     """
-    for i in range(n):
+    for _ in range(n):
         fd(t, length)
         lt(t, angle)
 

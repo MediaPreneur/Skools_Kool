@@ -5,10 +5,7 @@ Type this example into a file named wc.py and run it as a script. Then run the P
 import os, sys
 
 def linecount(filename):
-    count = 0
-    for line in open(filename):
-        count+=1
-    return count
+    return sum(1 for _ in open(filename))
 
 if __name__=='__main__':
     # Use sys.path.insert to add directory to python path

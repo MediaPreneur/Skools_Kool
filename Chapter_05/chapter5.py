@@ -35,10 +35,9 @@ def getInput(inList, prompt, n):
     """
     if n<=0:
         return inList
-    else:
-        a = raw_input(prompt)
-        inList.append(int(a))
-        getInput(inList, prompt, n-1)
+    a = raw_input(prompt)
+    inList.append(int(a))
+    getInput(inList, prompt, n-1)
 
 def is_triangle(edgeList):
     """takes three lengths and reports if they can be a triangle"""

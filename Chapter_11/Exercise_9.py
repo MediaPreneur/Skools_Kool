@@ -18,9 +18,6 @@ def has_duplicates(listin):
 def has_duplicatesTernary(listin):
     """"Return True if input has duplicates."""
     counterDict = {}
-    for element in listin:
-        pass
-        #True if element in counterDict else counterDict[element] = 1
     return False
 
 def has_duplicatesDefault(listin):
@@ -34,7 +31,7 @@ def has_duplicatesDefault(listin):
 def has_duplicatesSet(listin):
     """Return True if input has duplicates"""
     mySet = set(listin)
-    return False if len(mySet) == len(listin) else True
+    return len(mySet) != len(listin)
 
 if __name__ == '__main__':
     goodList = ['matt', 'pat', 'cat']

@@ -2,11 +2,7 @@ __author__ = 'matt'
 
 def has_match(t1, t2):
     """Return True if there is an index such that t1[i] == t2[i]"""
-    for x,y in zip(t1,t2):
-        if x == y:
-            return True
-    else:
-        return False
+    return any(x == y for x,y in zip(t1, t2))
 
 def tuple_assignment():
     """Looking at tuple assignment for dictionary traversal"""

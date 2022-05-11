@@ -21,11 +21,7 @@ def find(word,letter, index=0):
 def count(word, letter):
     """Given a string and a letter,
     return occurence count"""
-    counter = 0
-    for i in word:
-        if i==letter:
-            counter+=1
-    return counter
+    return sum(i == letter for i in word)
 
 if __name__ == '__main__':
     print count('racecar', 'c')
@@ -38,9 +34,7 @@ def countThreeParam(word,letter,index=0):
     while index < len(word):
         if word[index] == letter:
             counter+=1
-            index +=1
-        else:
-            index+=1
+        index +=1
     return counter
 
 if __name__ == '__main__':

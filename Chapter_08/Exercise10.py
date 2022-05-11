@@ -1,7 +1,7 @@
 __author__ = 'matt'
 
 def is_palindrome(word):
-    return True if word==word[::-1] else False
+    return word == word[::-1]
 
 if __name__ == '__main__':
     print is_palindrome('amazon')

@@ -14,7 +14,7 @@ def producer_ready():
 
 def producer():
     """Return a random number every set interval of time."""
-    for i in range(100):
+    for _ in range(100):
         time.sleep(1)
         return random.randint(1,1000)
 

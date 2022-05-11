@@ -9,7 +9,7 @@ from collections import Counter
 
 def checkSumCreator(file):
     """Returns a list with the file name and checksum for a given file"""
-    cmd = 'md5 ' + file
+    cmd = f'md5 {file}'
     fp = os.popen(cmd)
     res = fp.read()
     stat = fp.close()

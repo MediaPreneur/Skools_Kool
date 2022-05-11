@@ -13,7 +13,7 @@ class Card(object):
         self.rank = rank
 
     def __str__(self):
-        return '%s of %s' % (Card.rank_names[self.rank], Card.suit_names[self.suit])
+        return f'{Card.rank_names[self.rank]} of {Card.suit_names[self.suit]}'
 
     def __cmp__(self, other):
         # Use tuple comparison to compare suite first, then rank.
@@ -31,15 +31,10 @@ class Deck(object):
         # Note that you don't need to place the Card class
         # definition above the Deck definition.
         for suit in range(4):
-            for rank in range(1,14):
-                self.cards.append(Card(suit, rank))
+            self.cards.extend(Card(suit, rank) for rank in range(1,14))
 
     def __str__(self):
-        res = []
-        for card in self.cards:
-            # Here we're using the Card class' own __str__ representation
-            # rather then storing the Card instance itself
-            res.append(str(card))
+        res = [str(card) for card in self.cards]
         return '\n'.join(res)
 
     def sort(self):
@@ -69,7 +64,7 @@ class Deck(object):
         # Good to place this method in the Deck class as it is inherited by hand.
         # Can be used by both Deck and Hand now.
         # If method were in Hand class, only would allow for method on Hand, not Deck.
-        for i in range(num):
+        for _ in range(num):
             hand.add_card(self.pop_card())
 
     def deal_hands(self, numHands, numCards):
@@ -82,7 +77,7 @@ class Deck(object):
         cards per hand, and returns a list of Hand objects.
         """
         handList = []
-        for hand in range(numHands):
+        for _ in range(numHands):
             hOut = Hand()
             self.move_cards(hOut,numCards)
             handList.append(hOut)

@@ -17,14 +17,7 @@ def most_frequent(instring):
          # I guess tuple assignment doesn't work for tuples
 #        i[0],i[1] = i[1],i[0]
         i = i[1],i[0]
-    # What the hell did I just do?
-#    tupleCount.sort(key=lambda letter: letter[1], reverse=True)
-
-    sortedList = []
-    for eachTuple in tupleCount:
-        sortedList.append(eachTuple[0])
-
-    return sortedList
+    return [eachTuple[0] for eachTuple in tupleCount]
 
 if __name__ == '__main__':
     print most_frequent('hannabarberra')

@@ -3,18 +3,12 @@ __author__ = 'matt'
 def any_lowercase1(s):
     """Return True/False based on case of first letter"""
     for c in s:
-        if c.islower():
-            return True
-        else:
-            return False
+        return bool(c.islower())
 
 def any_lowercase2(s):
     """Returns True because string 'c' is lowercase"""
     for c in s:
-        if 'c'.islower():
-            return "True"
-        else:
-            return 'False'
+        return "True" if 'c'.islower() else 'False'
 
 def any_lowercase3(s):
     """Returns result for last letter"""
@@ -33,10 +27,7 @@ def any_lowercase4(s):
 
 def any_lowercase5(s):
     """Cycles through all values, returns True if lowerc-ase"""
-    for c in s:
-        if not c.islower():
-            return False
-    return True
+    return all(c.islower() for c in s)
 
 if __name__ == '__main__':
     print any_lowercase1('UPPER')

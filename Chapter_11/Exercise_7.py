@@ -3,7 +3,7 @@ __author__ = 'matt'
 Memoize the Ackermann function from Exercise 6.5 and see if memoization makes it possible to evaluate the function with bigger arguments. Hint: no. Solution: http://thinkpython.com/code/ackermann_memo.py.
 """
 
-known = dict()
+known = {}
 
 def ackermann_book(m, n):
     # TODO: solution uses try/execpt block

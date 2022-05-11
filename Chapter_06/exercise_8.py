@@ -8,9 +8,8 @@ def gcd(a,b):
     """
     if a == b:
         return a
-    else:
-        values = sorted([a,b])
-        return gcd(values[1] - values[0], values[0])
+    values = sorted([a,b])
+    return gcd(values[1] - values[0], values[0])
 
 if __name__ == '__main__':
     print gcd(1989,867)

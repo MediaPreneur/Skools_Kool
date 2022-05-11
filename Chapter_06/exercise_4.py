@@ -11,8 +11,7 @@ def a(x,y):
 
 def c(x,y,z):
     total =  x + y + z
-    square = b(total)**2
-    return square
+    return b(total)**2
 
 x = 1
 y = x + 1

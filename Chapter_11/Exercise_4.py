@@ -12,11 +12,7 @@ def reverse_lookup(d, v):
 
 def reverse_lookup_List(d, v):
     """Return a list containing all keys matching a given dictionary value."""
-    klist = list()
-    for k in d:
-        if d[k] == v:
-            klist.append(k)
-    return klist
+    return [k for k in d if d[k] == v]
 
 if __name__ == '__main__':
     mattDict = {'too-hundred':200, 'z': 200, 'x':'letter', 'a': 30, 25:'number'}

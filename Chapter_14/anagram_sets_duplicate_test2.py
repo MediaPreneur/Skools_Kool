@@ -12,8 +12,7 @@ def signature(s):
     """Returns the signature of this string, which is a string
     that contains all of the letters in order.
     """
-    t = list(s)
-    t.sort()
+    t = sorted(s)
     t = ''.join(t)
     return t
 
@@ -75,11 +74,7 @@ def filter_length(d, n):
 
     Returns: new map from word to list of anagrams
     """
-    res = {}
-    for word, anagrams in d.iteritems():
-        if len(word) == n:
-            res[word] = anagrams
-    return res
+    return {word: anagrams for word, anagrams in d.iteritems() if len(word) == n}
 
 
 if __name__ == '__main__':

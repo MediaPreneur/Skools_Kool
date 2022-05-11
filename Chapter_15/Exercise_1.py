@@ -12,7 +12,7 @@ class Point(object):
         return [self.x,self.y]
 
     def __str__(self):
-        return 'Point: %s, %s' % (self.x, self.y)
+        return f'Point: {self.x}, {self.y}'
 
     def __add__(self, other): # It's convention to use self, other. Other is another instance.
         """Return sum of two coordinates.
